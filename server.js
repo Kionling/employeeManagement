@@ -31,9 +31,14 @@ function init(){
                 "Add Employee",
                 "Add Manager",
                 "View Workplace"
-            ]
+            ],
+            name: "decision"
         }
-    ]).then()
+    ]).then( function(input){
+        switch(input.decision){
+            
+        }
+    })
 
 
   }
