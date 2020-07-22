@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Kionling/employeeManagement/issues"
   },
-  "homepage": "https://github.com/Kionling/employeeManagement#readme"
+  "homepage": "https://github.com/Kionling/employeeManagement#readme",
+  "dependencies": {
+    "inquirer": "^7.3.2",
+    "mysql": "^2.18.1"
+  }
 }
