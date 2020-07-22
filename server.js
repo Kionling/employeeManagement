@@ -27,7 +27,7 @@ function init(){
             message: "What would you like to do?",
             choices: [
                 "Add Department",
-                "Add role",
+                "Add Role",
                 "Add Employee",
                 "Add Manager",
                 "View Workplace"
@@ -36,9 +36,19 @@ function init(){
         }
     ]).then( function(input){
         switch(input.decision){
-            
+            case "Add Department": 
+                addDepartment();
+                break;
+            case "Add Role":
+                addRole();
+                break;
+            case "Add Employee":
+                addEmployee();
+                break;
+            case "Add Manager":
+                addManager();
+                break;
+            default: init();
         }
-    })
-
-
+    });
   }
