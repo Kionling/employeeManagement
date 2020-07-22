@@ -81,17 +81,13 @@ function employeePrompt(){
             type: "input",
             message: "Last name of employee?",
             name: "last_name"
-        },
-        // {
-        //     type: "number",
-        //     message: "What is your role id?",
-        //     name: "role_id"
-        // }
+        }
     ).then(function(input){
         console.log(`Adding your employee ${input.first_name} ${input.last_name} to the workplace!`)
         addEmployee(input);
     })
 };
+
 function addEmployee(input){
 
 };
@@ -103,8 +99,12 @@ function deparmentPrompt(){
             message: "What is your department name?",
             name: "departmentName"
         }
-    )
+    ).then(function (input) {
+        console.log(`Adding department ${input.departmentName} to the list of departments!`)
+        addDepartment(input);
+    })
 };
+
 function addDepartment(){};
 
 function rolePrompt(){
@@ -118,8 +118,11 @@ function rolePrompt(){
             type: 'input',
             name: 'salary'
         }
-    )
+    ).then(function (input) {
+        console.log(`You've added a new role to `)
+    })
 };
+
 function addRole(){};
 
 init();

@@ -25,6 +25,9 @@ CREATE TABLE employee (
     manager_id INT NULL,
     PRIMARY KEY (id)
 );
+SELECT * FROM employees;
+SELECT * FROM roles;
+SELECT * FROM departments;
 
 INSERT INTO employee(first_name, last_name, role_id, manager_id)
 VALUES ("Danny", "Jauregui", 0, 0);
