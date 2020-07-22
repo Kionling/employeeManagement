@@ -78,7 +78,18 @@ function deparmentPrompt(){
             name: "deparmentName"
         }
     ]).then(function(input) {
-        console.log(`You just added ${input.deparmentName} to your department list!`)
+        connection.query (
+            "INSERT INTO department SET ?",
+            {
+                name: deparmentName,
+            },
+            function(err, res) {
+                if (err, res){
+                    console.log(res.affectedRows + "Department added! \n");
+                    init();
+                }
+            }
+        )
     })
 };
 
