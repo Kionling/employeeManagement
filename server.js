@@ -70,59 +70,6 @@ function init(){
       })
   }
 //generating all functions for prompt responses and appending inputs
-function employeePrompt(){
-    inquirer.prompt(
-        {
-            type: "input",
-            message: "First Name of employee?",
-            name: "first_name"
-        },
-        {
-            type: "input",
-            message: "Last name of employee?",
-            name: "last_name"
-        }
-    ).then(function(input){
-        console.log(`Adding your employee ${input.first_name} ${input.last_name} to the workplace!`)
-        addEmployee(input);
-    })
-};
 
-function addEmployee(input){
-
-};
-
-function deparmentPrompt(){
-    inquirer.prompt(
-        {
-            type: "input",
-            message: "What is your department name?",
-            name: "departmentName"
-        }
-    ).then(function (input) {
-        console.log(`Adding department ${input.departmentName} to the list of departments!`)
-        addDepartment(input);
-    })
-};
-
-function addDepartment(){};
-
-function rolePrompt(){
-    inquirer.prompt(
-        {
-            message: 'Title:',
-            type: 'input',
-            name: 'title'
-        }, {
-            message: 'Salary:',
-            type: 'input',
-            name: 'salary'
-        }
-    ).then(function (input) {
-        console.log(`You've added a new role to `)
-    })
-};
-
-function addRole(){};
 
 init();
