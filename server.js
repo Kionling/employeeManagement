@@ -20,7 +20,7 @@ var connection = mysql.createConnection({
   });
   
 
-  async function init(){
+function init(){
     inquirer.prompt([
         {
             type: "list",
@@ -28,11 +28,12 @@ var connection = mysql.createConnection({
             choices: [
                 "Add Department",
                 "Add role",
-                "Add manager",
-                "View "
+                "Add Employee",
+                "Add Manager",
+                "View Workplace"
             ]
         }
-    ])
+    ]).then()
 
 
   }
