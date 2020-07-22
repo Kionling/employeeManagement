@@ -40,7 +40,7 @@ function init(){
                 deparmentPrompt();
                 break;
             case "Add Role":
-                addRole();
+                rolePrompt();
                 break;
             case "Add Employee":
                 employeePrompt();
@@ -70,11 +70,37 @@ function init(){
       })
   }
 //generating all functions for prompt responses and appending inputs
-function employeePrompt(){};
-  function addEmployee(){};
+function employeePrompt(){
+    inquirer.prompt(
+        {
+            type: "input",
+            message: "First Name of employee?",
+            name: "first_name"
+        },
+        {
+            type: "input",
+            message: "Last name of employee?",
+            name: "last_name"
+        },
+        // {
+        //     type: "number",
+        //     message: "What is your role id?",
+        //     name: "role_id"
+        // }
+    ).then(function(input){
+        console.log(`Adding your employee ${input.first_name} ${input.last_name} to the workplace!`)
+        addEmployee(input);
+    })
+};
+function addEmployee(){};
 
-  function deparmentPrompt()
-  function addDepartment();
+function deparmentPrompt(){};
+function addDepartment(){};
 
-  function managerPrompt();
-  function addManager();
+function managerPrompt(){};
+function addManager(){};
+
+function rolePrompt(){};
+function addRole(){};
+
+init();
