@@ -53,4 +53,19 @@ function init(){
     });
   }
 
-  init();
+  function doMore(){
+      inquirer.prompt(
+          {
+              type: "confirm",
+              message: "Would you like to do more?",
+              name: "doMore"
+          }
+      ).then(function(input){
+          if (input === true){
+              init();
+          }
+          else{
+              connection.end();
+          }
+      })
+  }
