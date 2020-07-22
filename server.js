@@ -92,15 +92,34 @@ function employeePrompt(){
         addEmployee(input);
     })
 };
-function addEmployee(){};
+function addEmployee(input){
 
-function deparmentPrompt(){};
+};
+
+function deparmentPrompt(){
+    inquirer.prompt(
+        {
+            type: "input",
+            message: "What is your department name?",
+            name: "departmentName"
+        }
+    )
+};
 function addDepartment(){};
 
-function managerPrompt(){};
-function addManager(){};
-
-function rolePrompt(){};
+function rolePrompt(){
+    inquirer.prompt(
+        {
+            message: 'Title:',
+            type: 'input',
+            name: 'title'
+        }, {
+            message: 'Salary:',
+            type: 'input',
+            name: 'salary'
+        }
+    )
+};
 function addRole(){};
 
 init();
