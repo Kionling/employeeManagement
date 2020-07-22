@@ -74,16 +74,11 @@ function deparmentPrompt(){
     inquirer.prompt([
         {
             type: "input",
-            message: "What is your employee's first name?",
-            name: "first_name"
-        },
-        {
-            type: "input",
-            message: "What is your employee's last name?",
-            name: "last_name"
+            message: "What is your deparment name?",
+            name: "deparmentName"
         }
     ]).then(function(input) {
-        console.log(`Your employee${input.first_name} ${input.last_name}`)
+        console.log(`You just added ${input.deparmentName} to your department list!`)
     })
 };
 
