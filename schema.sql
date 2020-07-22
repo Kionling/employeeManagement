@@ -1,11 +1,11 @@
 DROP DATABASE IF EXISTS workplace_db;
 CREATE DATABASE workplace_db;
-USE DATABASE workplace_db;
+USE  workplace_db;
 
 CREATE TABLE department (
-    id INT NOT NULL AUTO_INCREMENT
+    id INT NOT NULL AUTO_INCREMENT,
     -- holds department name--
-    name VARCHAR(30)
+    name VARCHAR(30),
     PRIMARY KEY (id)
 );
 
