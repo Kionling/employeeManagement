@@ -48,6 +48,8 @@ function init(){
             case "Add Manager":
                 managerPrompt();
                 break;
+            case "View employees":
+                getEmployeeInfo();
             default: init();
         }
     });
@@ -71,5 +73,25 @@ function init(){
   }
 //generating all functions for prompt responses and appending inputs
 
+function deparmentPrompt(){
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is your employee's first name?",
+            name: "first_name"
+        },
+        {
+            type: "input",
+            message: "What is your employee's last name?",
+            name: "last_name"
+        }
+    ]).then(function(input) {
+        console.log(`Your employee${input.first_name} ${input.last_name}`)
+    })
+};
+
+function addEmployee
+
 
 init();
+
