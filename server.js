@@ -75,7 +75,7 @@ function deparmentPrompt(){
         {
             type: "input",
             message: "What is your deparment name?",
-            name: "deparmentName"
+            name: "departmentName"
         }
     ]).then(function(input) {
         connection.query (
