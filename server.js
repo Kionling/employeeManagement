@@ -37,16 +37,16 @@ function init(){
     ]).then( function(input){
         switch(input.decision){
             case "Add Department": 
-                addDepartment();
+                deparmentPrompt();
                 break;
             case "Add Role":
                 addRole();
                 break;
             case "Add Employee":
-                addEmployee();
+                employeePrompt();
                 break;
             case "Add Manager":
-                addManager();
+                managerPrompt();
                 break;
             default: init();
         }
@@ -69,5 +69,12 @@ function init(){
           }
       })
   }
+//generating all functions for prompt responses and appending inputs
+function employeePrompt(){};
+  function addEmployee(){};
 
-  function addEmployee()
+  function deparmentPrompt()
+  function addDepartment();
+
+  function managerPrompt();
+  function addManager();
