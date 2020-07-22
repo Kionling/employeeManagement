@@ -19,3 +19,9 @@ var connection = mysql.createConnection({
       start();
   });
   
+
+  async function init(){
+
+
+    
+  }
