@@ -69,3 +69,5 @@ function init(){
           }
       })
   }
+
+  function addEmployee()
