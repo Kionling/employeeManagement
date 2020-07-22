@@ -23,14 +23,14 @@ var connection = mysql.createConnection({
 function init(){
     inquirer.prompt([
         {
-            type: "list",
+            type: "rawlist",
             message: "What would you like to do?",
             choices: [
                 "Add Department",
                 "Add Role",
                 "Add Employee",
-                "Add Manager",
-                "View Workplace"
+                "View Lists",
+
             ],
             name: "decision"
         }
@@ -45,11 +45,8 @@ function init(){
             case "Add Employee":
                 employeePrompt();
                 break;
-            case "Add Manager":
-                managerPrompt();
-                break;
-            case "View employees":
-                getEmployeeInfo();
+            case "View Lists":
+                getLists();
             default: init();
         }
     });
@@ -89,8 +86,6 @@ function deparmentPrompt(){
         console.log(`Your employee${input.first_name} ${input.last_name}`)
     })
 };
-
-function addEmployee
 
 
 init();
