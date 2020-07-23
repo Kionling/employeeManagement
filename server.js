@@ -222,7 +222,15 @@ function viewEmployees(){
 
 
 function updateEmployee(){
-    
+    connection.query(
+        "SELECT * FROM employee", function(err, input){
+            if (err) throw err;
+            inquirer.prompt([
+                
+                
+            ])
+        }
+    )
 }
 
 
