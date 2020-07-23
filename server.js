@@ -221,37 +221,4 @@ function viewEmployees(){
 }
 
 
-async function updateEmployee(){
-    var roles = [];
-    var employees = [];
-    var allEmployees;
-    var allRoles;
-    await connection.query("SELECT * FROM role", function(err, input){
-        if (err) throw err;
-        for(var i=0; i < input.length; i++){
-            if(input[i].title){
-                roles.push(input[i].title);
-            }
-        }
-        allroles = input;
-    })
-    await connection.query("SELECT * FROM employee", function(err, input){
-        inquirer.prompt([
-            {
-                type: "rawlist",
-                message: "Which employee?",
-                name: "name",
-                choices: "employees"
-            },
-            {
-                type: "rawlist",
-                message: "Which role?",
-                name: "role",
-                choices: "role"
-            },
-        ]).then(function( { name, role}) {
-            var employees;
-        })
-    })
-}
-
+function updateEmployee();
