@@ -233,6 +233,10 @@ async function updateEmployee(){
                 roles.push(input[i].title);
             }
         }
+        allroles = input;
+    })
+    await connection.query("SELECT * FROM employee", function(err, input){
+
     })
 }
 
