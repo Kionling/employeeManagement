@@ -73,7 +73,7 @@ function init(){
               name: "doMore"
           }
       ).then(function(input){
-          if (input === true){
+          if (input.doMore === true){
             //   doMore();
             init();
           }
@@ -116,12 +116,12 @@ function rolePrompt(){
             name: "title"
         },
         {
-            type: "input",
+            type: "number",
             message: "What is this employee's salary?",
             name: "salary"
         },
         {
-            type: "input",
+            type: "number",
             message: "What is the employee's department id",
             name: "departmentID"
         },
@@ -157,12 +157,12 @@ function employeePrompt(){
             name: "last_name"
         },
         {
-            type: "input",
+            type: "number",
             message:"What is your employee's role id?",
             name: "role_id"
         },
         {
-            type: "input",
+            type: "number",
             message:"Manager id?",
             name: "manager_id"
         }
@@ -220,5 +220,9 @@ function viewEmployees(){
     )
 }
 
+
+function updateEmployee(){
+    
+}
 
 
