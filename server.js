@@ -228,6 +228,11 @@ async function updateEmployee(){
     var allRoles;
     await connection.query("SELECT * FROM role", function(err, input){
         if (err) throw err;
+        for(var i=0; i < input.length; i++){
+            if(input[i].title){
+                roles.push(input[i].title);
+            }
+        }
     })
 }
 
