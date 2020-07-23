@@ -221,5 +221,13 @@ function viewEmployees(){
 }
 
 
-
+async function updateEmployee(){
+    var roles = [];
+    var employees = [];
+    var allEmployees;
+    var allRoles;
+    await connection.query("SELECT * FROM role", function(err, input){
+        if (err) throw err;
+    })
+}
 
