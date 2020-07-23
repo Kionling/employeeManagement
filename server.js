@@ -144,6 +144,15 @@ function rolePrompt(){
 };
 
 
+function employeePrompt(){
+    inquirer.prompt([
+        {
+            
+        }
+    ])
+}
+
+
 
 
 
