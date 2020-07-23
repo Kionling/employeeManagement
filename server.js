@@ -31,7 +31,8 @@ function init(){
                 "Add Employee",
                 "View Roles",
                 "View Departments",
-                "View Employees"
+                "View Employees",
+                "Update Employees"
 
             ],
             name: "decision"
@@ -72,7 +73,8 @@ function init(){
           }
       ).then(function(input){
           if (input === true){
-              doMore();
+            //   doMore();
+            init();
           }
           else{
               connection.end();
@@ -103,6 +105,42 @@ function deparmentPrompt(){
         )
     })
 };
+
+
+function rolePrompt(){
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What title does your employee have?",
+            name: "title"
+        },
+        {
+            type: "input",
+            message: "What is this employee's salary?",
+            name: "salary"
+        },
+        {
+            type: "input",
+            message: "What is the employee's department id",
+            name: "departmentID"
+        },
+
+    ]).then(function(response) {
+        connection.query(
+            "INSERT INTO role SET ?",
+            {
+                title: response.title,
+                salary: response.salary,
+                department_id: response.departmentID
+            },
+            function(err) {
+                if(err) throw err;
+                console.log('Added new role!')
+                doMore();
+            }
+        )
+    })
+}
 
 
 
