@@ -176,7 +176,13 @@ function employeePrompt(){
                 last_name: response.last_name,
                 role_id: response.role_id,
                 manager_id: response.manager_id
-            }
+            },
+            function(err) {
+                if (err) throw err;
+                console.log("You inserted a new employee successfully!");
+
+                doMore();
+              }        
         )
     })
 }
