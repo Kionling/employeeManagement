@@ -147,9 +147,38 @@ function rolePrompt(){
 function employeePrompt(){
     inquirer.prompt([
         {
-            
+            type: "input",
+            message:"What is the employee's first name?",
+            name: "first_name"
+        },
+        {
+            type: "input",
+            message:"What is your employee's last name?",
+            name: "last_name"
+        },
+        {
+            type: "input",
+            message:"What is your employee's role id?",
+            name: "role_id"
+        },
+        {
+            type: "input",
+            message:"Manager id?",
+            name: "manager_id"
         }
-    ])
+
+
+    ]).then(function(response){
+        connection.query(
+            "INSERT INTO employee SET ?",
+            {
+                first_name: response.first_name,
+                last_name: response.last_name,
+                role_id: response.role_id,
+                manager_id: response.manager_id
+            }
+        )
+    })
 }
 
 
