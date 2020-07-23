@@ -236,7 +236,22 @@ async function updateEmployee(){
         allroles = input;
     })
     await connection.query("SELECT * FROM employee", function(err, input){
-
+        inquirer.prompt([
+            {
+                type: "rawlist",
+                message: "Which employee?",
+                name: "name",
+                choices: "employees"
+            },
+            {
+                type: "rawlist",
+                message: "Which role?",
+                name: "role",
+                choices: "role"
+            },
+        ]).then(function( { name, role}) {
+            var employees;
+        })
     })
 }
 
