@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
   });
   connection.connect(function(err) {
       if (err) throw err;
-    //   init();
+      init();
   });
   
 
@@ -29,7 +29,9 @@ function init(){
                 "Add Department",
                 "Add Role",
                 "Add Employee",
-                "View Lists",
+                "View Roles",
+                "View Departments",
+                "View Employees"
 
             ],
             name: "decision"
@@ -45,8 +47,17 @@ function init(){
             case "Add Employee":
                 employeePrompt();
                 break;
-            case "View Lists":
-                getLists();
+            case "View Departments":
+                viewDep();
+                break;
+            case "View Roles":
+                viewRoles();
+                break;
+            case "View Employees":
+                viewEmployees();
+                break;
+
+                
             default: init();
         }
     });
@@ -61,7 +72,7 @@ function init(){
           }
       ).then(function(input){
           if (input === true){
-              init();
+              doMore();
           }
           else{
               connection.end();
@@ -75,18 +86,18 @@ function deparmentPrompt(){
         {
             type: "input",
             message: "What is your deparment name?",
-            name: "departmentName"
+            name: "name"
         }
     ]).then(function(input) {
         connection.query (
             "INSERT INTO department SET ?",
             {
-                name: deparmentName,
+                name: input.name,
             },
             function(err, res) {
                 if (err, res){
                     console.log(res.affectedRows + "Department added! \n");
-                    init();
+                    doMore();
                 }
             }
         )
@@ -94,5 +105,6 @@ function deparmentPrompt(){
 };
 
 
-init();
+
+
 
