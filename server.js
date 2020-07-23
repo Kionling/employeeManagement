@@ -188,7 +188,36 @@ function employeePrompt(){
 }
 
 function viewDep(){
-    
+    connection.query(
+        "SELECT * FROM department", 
+        function(err, data){
+            if(err) throw err;
+            console.table(data);
+            doMore();
+        }
+    )
+}
+
+function viewRoles(){
+    connection.query(
+        "SELECT * FROM role", 
+        function(err, data){
+            if(err) throw err;
+            console.table(data);
+            doMore();
+        }
+    )
+}
+
+function viewEmployees(){
+    connection.query(
+        "SELECT * FROM employee", 
+        function(err, data){
+            if(err) throw err;
+            console.table(data);
+            doMore();
+        }
+    )
 }
 
 
