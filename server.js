@@ -57,7 +57,8 @@ function init(){
             case "View Employees":
                 viewEmployees();
                 break;
-
+            case "Update Employee":
+                updateEmployee();
                 
             default: init();
         }
@@ -140,7 +141,7 @@ function rolePrompt(){
             }
         )
     })
-}
+};
 
 
 
