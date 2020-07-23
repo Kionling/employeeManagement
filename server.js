@@ -222,7 +222,48 @@ function viewEmployees(){
 
 
 function updateEmployee() {
-   
+   connection.query(
+       "SELECT * FROM employee",
+       function(err, input) {
+        if (err) throw err;
+        inquirer.prompt([
+            {
+                type: "rawlist",
+                name: "role",
+                choices: function (err, input) {
+                    var roles = [];
+                    for (var i = 0 ; input.length; i++){
+                        roles.push(input[i].first_name);
+                    }
+                    return roles;
+                },
+                message: "Which employee do you want to update ROle?"
+            },
+            {
+                type: "input",
+                message: "What is the new role id?",
+                name: "updatedRole"
+            }
+        ]).then(function(input){
+            connection.query(
+                "UPDATE employee SET ? WHERE ?",
+                [
+                {
+                    role_id: input.updatedRole
+                },
+                {
+                    first_name: input.role
+                }
+            ],
+            function(err) {
+                if (err) throw err;
+                console.log("updated role");
+                doMore();
+            }
+            )
+        })
+       }
+   )
 }
 
 
